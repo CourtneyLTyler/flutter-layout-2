@@ -16,13 +16,32 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Building Layouts with Flutter'),
+          title: Text('Container'),
         ),
-        body: Center(
-          child: Text(
-            'Hello Flutter Layouts',
-            style: TextStyle(fontSize: 24),
-          ),
+        body: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.all(50),
+              // child: Text('hello'),
+              width: 300,
+              height: 300,
+              // child: FlutterLogo(),
+              decoration: BoxDecoration(
+                color: Colors.orange,
+                gradient: LinearGradient(
+                    colors: [Colors.pink.shade50, Colors.pink.shade500]),
+                image: DecorationImage(
+                  image: NetworkImage('http://bit.ly/flutter_tiger'),
+                  fit: BoxFit.none,
+                ),
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(24),
+                  bottomRight: Radius.circular(24),
+                ),
+              ),
+            ),
+          ],
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.lightbulb_outline),
